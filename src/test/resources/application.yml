@@ -1,0 +1,29 @@
+#main(실제 운영 코드)에선 main의 resources가 우선권,
+#test에선 test의 resources가 우선권을 가짐
+
+#매번 외부 디비로 왔다갔다하면서 테스트하기 귀찮으니까 메모리 디비 쓸거임
+#이제 test 돌리면 이 얌파일을 읽을거임
+
+#spring:
+#  datasource:
+#    #메모리디비(h2)
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driverClassName: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddlAuto: create
+#    properties:
+#      hibernate:
+#        format_sql: true
+
+        #근데? 여기까지 다 날려도 됨. 사실 다 날려도됨
+        #스프링부트는 설정이 따로 없으면 알아서 메모리디비로 함
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
