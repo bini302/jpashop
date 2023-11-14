@@ -12,8 +12,9 @@ spring:
   jpa:
     hibernate:
       #실행 시점에 지우고 다시 자동 생성
-      #drop if exist -> create
-      ddlAuto: create
+      #create: drop if exist
+      #none: not drop
+      ddlAuto: none
     properties:
       #hibernate 설정, 이런 옵션은 스프링부트 메뉴얼보고 공부
       hibernate:

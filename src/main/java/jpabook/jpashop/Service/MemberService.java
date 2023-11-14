@@ -72,4 +72,16 @@ public class MemberService {
     public Member findOne(Long memberId){
         return memberRepository.findOne(memberId);
     }
+
+    @Transactional
+    public void update(Long id, String name) {
+        //transaction이 있는데서 조회하면 영속성 가져오고
+        //이름 바꾸고
+        //커밋할때 변경감지 > 업데이트
+        //트랜잭션 끝
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+
+        //void가 아니라 member를 반환해도 되긴하는데,, 으음,,
+    }
 }
